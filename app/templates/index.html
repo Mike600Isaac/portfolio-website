@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Isaac | Python Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Michael Isaac</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center text-center">
+  <div class="container">
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="rounded-circle mb-3 shadow-lg" width="160" alt="Profile Picture">
+    <h1 class="display-4 fw-bold text-white">Hi, I'm Michael Isaac</h1>
+    <p class="lead text-light">Junior Python Developer | Flask | Web Applications</p>
+    <a href="#contact" class="btn btn-gradient btn-lg mt-3">Hire Me</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6 mb-4">
+      <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="img-fluid rounded shadow" alt="About Image">
+    </div>
+    <div class="col-md-6">
+      <h2 class="fw-bold mb-3">About Me</h2>
+      <p>I am a passionate Python developer with experience building scalable web applications using Flask. I enjoy solving real-world problems, learning new technologies, and improving my coding skills every day.</p>
+      <p>Looking for opportunities to contribute and grow as a Python developer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Skills</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="skill-card p-3 shadow-sm text-center rounded">
+          <i class="fab fa-python fa-3x mb-2 text-primary"></i>
+          <h5>Python</h5>
+          <div class="progress mt-2">
+            <div class="progress-bar bg-primary" style="width: 90%;">90%</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="skill-card p-3 shadow-sm text-center rounded">
+          <i class="fas fa-server fa-3x mb-2 text-info"></i>
+          <h5>Flask</h5>
+          <div class="progress mt-2">
+            <div class="progress-bar bg-info" style="width: 85%;">85%</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="skill-card p-3 shadow-sm text-center rounded">
+          <i class="fab fa-html5 fa-3x mb-2 text-danger"></i>
+          <h5>HTML & CSS</h5>
+          <div class="progress mt-2">
+            <div class="progress-bar bg-danger" style="width: 80%;">80%</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="skill-card p-3 shadow-sm text-center rounded">
+          <i class="fas fa-database fa-3x mb-2 text-warning"></i>
+          <h5>SQLAlchemy</h5>
+          <div class="progress mt-2">
+            <div class="progress-bar bg-warning" style="width: 75%;">75%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="container py-5">
+  <h2 class="text-center fw-bold mb-5">Projects</h2>
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100 project-card">
+        <img src="{{ url_for('static', filename='images/project1.png') }}" class="card-img-top" alt="Project Image">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Event Tracker System</h5>
+          <p class="card-text">Flask web app to manage events and registrations.</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100 project-card">
+        <img src="{{ url_for('static', filename='images/project2.png') }}" class="card-img-top" alt="Project Image">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Portfolio Website</h5>
+          <p class="card-text">My own personal portfolio built with Flask & Bootstrap.</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-dark text-light py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Contact Me</h2>
+    <form method="POST" action="/contact" class="mx-auto" style="max-width:600px;">
+      <div class="mb-3 input-group">
+        <span class="input-group-text"><i class="fas fa-user"></i></span>
+        <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+      </div>
+      <div class="mb-3 input-group">
+        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+        <input type="email" class="form-control" placeholder="Your Email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" rows="5" placeholder="Your Message" name="message" required></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-gradient btn-lg">Send Message</button>
+      </div>
+    </form>
+    <p class="text-center mt-3 text-muted">Or email me directly: <a href="mailto:yourname@email.com" class="text-light">yourname@email.com</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-3 text-center">
+  &copy; 2026 Michael Isaac | Python Developer
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
