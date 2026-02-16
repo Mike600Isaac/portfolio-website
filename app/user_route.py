@@ -1,31 +1,65 @@
 from flask import render_template, request, flash, redirect, url_for
-from app import app
+from app import app,csrf
+from app.form import ContactForm,AdminLoginForm
+from app.models import db,Contact,Admin
 
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    contact = ContactForm()
+    return render_template("index.html", contact=contact)
 
 
-@app.route("/projects")
-def projects():
-    return render_template("projects.html")
-
-
-@app.route("/contact", methods=["GET", "POST"])
+@app.route("/contact/us/", methods=['GET', 'POST'])
+@csrf.exempt
 def contact():
-    if request.method == "POST":
-        name = request.form.get("name")
-        email = request.form.get("email")
-        message = request.form.get("message")
 
-        # For now we just print (later you can send email)
-        print("New Contact Message")
-        print("Name:", name)
-        print("Email:", email)
-        print("Message:", message)
+    contact = ContactForm()
 
-        flash("Your message has been sent successfully!", "success")
-        return redirect(url_for("contact"))
+    if contact.validate_on_submit():
 
-    return render_template("contact.html")
+        name = contact.name.data
+        email = contact.email.data
+        message = contact.message.data
+        contact_method = contact.contact_method.data
+        phone = contact.phone.data
+
+        cont = Contact(
+            name=name,
+            email=email,
+            message=message,
+            contact_method=contact_method,
+            phone=phone
+        )
+
+        db.session.add(cont)
+        db.session.commit()
+
+        flash('Your message has been received. I will get back to you shortly.', 'success')
+
+        return redirect(url_for("contact") + "#contact-me")
+
+    if request.method == 'POST':
+        flash('Please fill the form correctly.', 'danger')
+
+    return render_template('index.html', contact=contact)
+
+
+@app.route('/admin/login', methods=['GET', 'POST'])
+def admin_login():
+
+    form = AdminLoginForm()
+
+    if form.validate_on_submit():
+
+        admin = Admin.query.filter_by(email=form.email.data).first()
+
+        if admin and admin.password(form.password.data):
+            flash("Login successful", "success")
+            return redirect(url_for('admin_dashboard'))
+
+        flash("Invalid email or password", "danger")
+
+    return render_template("admin_login.html", form=form)
+
+
