@@ -1,44 +1,321 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+body{
+    background-color: #001427;
+    color: #ffffff;
 }
 
-.hero {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: white;
-  padding: 120px 0 80px;
+.name {
+    color: #BF0603;
+}
+.cv {
+    background-color: #BF0603;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+.cv:hover {
+    opacity: 0.7;
 }
 
-.btn-gradient {
-  background: linear-gradient(45deg, #ff7f50, #ffb347);
-  color: #fff;
-  border: none;
-  transition: all 0.3s ease;
+.cv a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-.btn-gradient:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+.project-btn {
+    display: inline-flex;           
+    align-items: center;
+    gap: 8px;                       
+    border: 1px solid #BF0603;
+    color: #BF0603;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;      
+    cursor: pointer;
 }
 
-.skill-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.project-btn:hover {
+    background-color: #BF0603;
+    color: #ffffff;
+    border-color: #BF0603;
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.navbar-brand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 900;
 }
 
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.navbar-nav .nav-link, .navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+}
+.navbar-brand span {
+    color: #BF0603;
+    font-weight: 700;
+}
+.navbar-brand:hover {
+    color: #ffffff;
+}
+.navbar-nav .nav-link:hover{
+    color: #BF0603;
+    text-decoration: none;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+.navbar-nav .nav-link .active {
+    color: #BF0603;
 }
 
-footer a {
-  text-decoration: none;
+.navbar-nav .nav-link.active {
+    color: #BF0603;
 }
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 50%;
+}
+
+.navbar .nav-link {
+    position: relative;
+    display: inline-block;
+}
+
+
+[alt="profile image"] {
+    border-radius: 10px;
+}
+
+
+#about {
+    margin-top: 8%;
+}
+
+
+
+.about-heading, .projects-heading, .skills-heading, .contact-heading {
+    padding: 3% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+#contact-me {
+    margin-top: 8%;
+}
+.about-heading .inline-hr, .projects-heading  .inline-hr, .skills-heading .inline-hr, .contact-heading .inline-hr {
+    flex: 1;
+    height: 4px;
+    border: none;
+    background-color: #BF0603;
+}
+
+[alt="Micheal Isaac"] {
+    border: #BF0603 5px solid;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ffffff;}
+
+.icons {
+    color: #BF0603;
+    font-size: 18px;
+}
+.icon {
+    color: #BF0603;
+    font-size: 40px;
+}
+
+#projects {
+    margin-top: 8%;
+}
+
+.proj-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 250px;
+}
+
+p .tech {
+    background-color: #BF0603;
+    /* color: #fff; */
+    font-size: 8px;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+
+.tech-list {
+    display: flex;        
+    flex-wrap: wrap;       
+    gap: 5px;              
+    margin: 10px 0;         
+}
+
+.projects {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(to right, #000000 2%, rgba(0,20,39,0.2) 100%);
+    color: #ffffff;
+}
+
+.projects:hover {
+    transform: translateY(-20px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5); 
+}
+
+#skills {
+    margin-top: 8%;
+}
+
+
+
+#footer {
+    margin-top: 8%;
+}
+
+.arrow-up {
+    display: inline-block;
+
+    height: 45px;
+    width: 45px;
+    line-height: 45px;   /* Perfect vertical centering */
+
+    border-radius: 50%;
+    border: 2px solid #BF0603;
+
+    color: #BF0603;
+    background-color: transparent;
+
+    font-size: 16px;
+    text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+.arrow-up:hover {
+    transform: translateY(-3px);
+
+    background-color: #BF0603;
+    color: white;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link i,
+.nav-link span {
+    transition: color 0.3s ease;
+    text-decoration: underline;
+
+}
+.text-underline {
+    text-decoration: underline;
+}
+
+.nav-link:hover i,
+.nav-link:hover span {
+    color: var(--primary-color);
+}
+:root {
+    --primary-color: #BF0603; 
+}
+
+.nav-link:hover i,
+.nav-link:hover span {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+:root {
+    --bs-primary: #BF0603;
+    --bs-primary-rgb: 191, 6, 3;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #BF0603;
+    border-color: #BF0603;
+}
+
+.btn-primary:hover {
+    background-color: #a30503;
+    border-color: #a30503;
+}
+
+/* Inputs focus */
+.form-control:focus {
+    border-color: #BF0603;
+    box-shadow: 0 0 0 0.2rem rgba(191, 6, 3, 0.15);
+    transform: translateY(-1px);
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.form-control {
+    padding: 0.75rem 1rem;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+
+
+@media (max-width: 768px) {
+    #contactModal > div { flex-direction: column; width: 95%; height: 90vh; overflow-y: auto; }
+    .modal-sidebar { width: 100% !important; padding: 2rem !important; }
+    .modal-form-side { width: 100% !important; padding: 2rem !important; }
+}
+
+@media (max-width: 768px) {
+        #contactModal {
+            align-items: flex-start !important; /* Start at top for scrolling */
+            padding: 10px !important;
+        }
+    }
+
+
+
+.sty-contact {
+    border: 1px solid #AED9E0;
+    width: 100%; 
+    padding: 1.2rem; 
+    border-radius: 8px; 
+    background: #f9f9f9; 
+    transition: all 0.3s ease;
+} 
+
+.sty-contact:hover {
+    border-color: #BF0603;
+    transform: translateY(-2px);
+}   
+
+.sty-contact:focus {
+    border-color: #BF0603;
+    transform: translateY(-2px);
+    outline: none;
+} 

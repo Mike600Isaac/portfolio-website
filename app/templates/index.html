@@ -1,159 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Isaac | Python Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micheal</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- google font -->
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+     <!-- Fontawsome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+      <!-- favicon -->
+       <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='favicon_io/apple-touch-icon.png')}}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='favicon_io/favicon-32x32.png') }}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',filename='favicon_io/favicon-16x16.png') }}">
+      <link rel="manifest" href="{{ url_for('static',filename='favicon_io/site.webmanifest') }}">
+      
+
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <section id="header">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Michael Isaac</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container py-2">
+                <a class="navbar-brand me-5" href="{{ url_for('home') }}">MICHEAL<span>&#47;&gt;</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style=" box-shadow: none; border: none; background-color: #fff;">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-me">Contact Me</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="cv" type="submit">
+                        <a href="/docs/Michael_Isaac_CV.docx" download> 
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                </button>
+                </form>
+                </div>
+            </div>
+        </nav>
+        
 
-<!-- Hero Section -->
-<section class="hero d-flex align-items-center text-center">
-  <div class="container">
-    <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="rounded-circle mb-3 shadow-lg" width="160" alt="Profile Picture">
-    <h1 class="display-4 fw-bold text-white">Hi, I'm Michael Isaac</h1>
-    <p class="lead text-light">Junior Python Developer | Flask | Web Applications</p>
-    <a href="#contact" class="btn btn-gradient btn-lg mt-3">Hire Me</a>
-  </div>
-</section>
 
-<!-- About Section -->
-<section id="about" class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-md-6 mb-4">
-      <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="img-fluid rounded shadow" alt="About Image">
-    </div>
-    <div class="col-md-6">
-      <h2 class="fw-bold mb-3">About Me</h2>
-      <p>I am a passionate Python developer with experience building scalable web applications using Flask. I enjoy solving real-world problems, learning new technologies, and improving my coding skills every day.</p>
-      <p>Looking for opportunities to contribute and grow as a Python developer.</p>
-    </div>
-  </div>
-</section>
+        <div class="container my-4">
 
-<!-- Skills Section -->
-<section id="skills" class="bg-light py-5">
-  <div class="container">
-    <h2 class="text-center fw-bold mb-5">Skills</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="skill-card p-3 shadow-sm text-center rounded">
-          <i class="fab fa-python fa-3x mb-2 text-primary"></i>
-          <h5>Python</h5>
-          <div class="progress mt-2">
-            <div class="progress-bar bg-primary" style="width: 90%;">90%</div>
-          </div>
+            <div class="row">
+                <div class="col-sm-8 col-md-7 d-flex flex-column justify-content-center mb-3">
+                    <h1>Hi, I'm <span class="name mb-0 pb-0">Micheal Isaac</span></h1>
+                    <h2>Full-Stack Python Developer     </h2>
+                    <p class="mb-0">I build secure, scalable web applications using Flask, MySQL, and JavaScript.</p>
+                    <p class="">Skilled in React, WordPress, and professional database tools like MySQL Workbench & HeidiSQL.</p>   
+                    <div class="mt-4">
+                        <a class="cv text-decoration-none" href="javascript:void(0)" onclick="toggleModal()"> <i class="fas fa-handshake"></i> Hire Me</a>
+                        <a href="#projects" class="project-btn ms-2">
+                            <i class="fas fa-eye"></i> view Projects
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-5">
+                    <img src="{{ url_for('static', filename='images/profile.png') }}" alt="profile image" class="img-fluid">
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="skill-card p-3 shadow-sm text-center rounded">
-          <i class="fas fa-server fa-3x mb-2 text-info"></i>
-          <h5>Flask</h5>
-          <div class="progress mt-2">
-            <div class="progress-bar bg-info" style="width: 85%;">85%</div>
-          </div>
+    </section>
+
+
+     <section id="about">
+        <div class="container">
+
+            <div class="row align-items-center about-section">
+                <!-- Text Column -->
+                <div class="col-md-7 about-text">
+                    <h1 class="about-heading">
+                    <hr class="inline-hr"> About Me <hr class="inline-hr">
+                    </h1>
+
+                    <p>I'm a computer engineering graduate and Python developer, passionate about building real-world web applications.</p>
+
+                    <p>
+                    I’m <strong>Micheal Isaac</strong>, a Full-Stack Python Developer and graduate of <strong>Federal University of Technology, Minna</strong>, as well as a <strong>Moat Academy</strong> alumnus. With over <strong>3 years of experience</strong> as an IT System Administrator, I have built and managed websites for companies and collaborated with developers to create both landing pages and full websites.
+                    </p>
+
+                    <p>
+                    I specialize in building <strong>secure, scalable web applications</strong> using <strong>Python, Flask, and JavaScript</strong>. On the frontend, I create <strong>responsive, interactive user interfaces</strong> using HTML, CSS, bootstrap, Vanila and React.js to deliver smooth user experiences.
+                    </p>
+
+                    <p>
+                    I am experienced with <strong>database management, version control using Git/GitHub</strong>, and deploying applications to production environments. My focus is on writing <strong>clean, maintainable code</strong> and developing systems that are easy to understand and extend.
+                    </p>
+
+                    <!-- Location & Availability -->
+                    <p>
+                    <i class="fas fa-map-marker-alt icons"></i> Nigerian <span class="mx-3">|</span> 
+                    <i class="fas fa-briefcase icons"></i> Open for Internships & Junior Roles
+                    </p>
+                </div>
+
+                <!-- Profile Picture Column -->
+                <div class="col-md-5 text-center">
+                    <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Micheal Isaac" class="img-fluid rounded-circle profile-pic">
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+   
+
+    <section id="projects">
+        <div class="container">
+            <h1 class="projects-heading">
+                <hr class="inline-hr"> My Projects <hr class="inline-hr">
+            </h1>
+
+            <div class="row">
+                <div class="col-md-6 projects shadow-sm p-3 mb-5 rounded">
+                    <div class="">
+                        <div class="row my-4">
+                            <div class="col-md-6"><h4>Citywild Event Tracker</h4>
+                                <p>An all-in-one web application for managing events, built with Flask, featuring full CRUD functionality and responsive design</p>
+                                <p class="tech-list">
+                                    <span class="tech">Flask</span> 
+                                    <span class="tech">MySQL</span> 
+                                    <span class="tech">REST APIs</span> 
+                                    <span class="tech">PayStack</span>
+                                    <span class="tech">JWT</span> 
+                                </p>
+                                <p><button class="cv mt-3">Live Demo</button></p>
+                            </div>
+                            <div class="col-md-6"><img src="{{ url_for('static', filename='images/citywild_app.png')}}" alt="Event Tracker Image" class="proj-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 projects shadow-sm p-3 mb-5 rounded">
+                    <div class="">
+                        <div class="row my-4">
+                            <div class="col-md-6"><h4>Citywild Event Tracker</h4>
+                                <p>An all-in-one web application for managing events, built with Flask, featuring full CRUD functionality and responsive design</p>
+                                <p class="tech-list">
+                                    <span class="tech">Flask</span> 
+                                    <span class="tech">MySQL</span> 
+                                    <span class="tech">REST APIs</span> 
+                                    <span class="tech">PayStack</span>
+                                    <span class="tech">JWT</span> 
+                                </p>
+                                <p><button class="cv mt-3">Live Demo</button></p>
+                            </div>
+                            <div class="col-md-6"><img src="{{ url_for('static', filename='images/citywild_app.png')}}" alt="Event Tracker Image" class="proj-img"></div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col-md-6 projects shadow-sm p-3 mb-5 rounded">
+                    <div class="">
+                        <div class="row my-4">
+                            <div class="col-md-6"><h4>Citywild Event Tracker</h4>
+                                <p>An all-in-one web application for managing events, built with Flask, featuring full CRUD functionality and responsive design</p>
+                                <p class="tech-list">
+                                    <span class="tech">Flask</span> 
+                                    <span class="tech">MySQL</span> 
+                                    <span class="tech">REST APIs</span> 
+                                    <span class="tech">PayStack</span>
+                                    <span class="tech">JWT</span> 
+                                </p>
+                                <p><button class="cv mt-3">Live Demo</button></p>
+                            </div>
+                            <div class="col-md-6"><img src="{{ url_for('static', filename='images/citywild_app.png')}}" alt="Event Tracker Image" class="proj-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 projects shadow-sm p-3 mb-5 rounded">
+                    <div class="">
+                        <div class="row my-4">
+                            <div class="col-md-6"><h4>Citywild Event Tracker</h4>
+                                <p>An all-in-one web application for managing events, built with Flask, featuring full CRUD functionality and responsive design</p>
+                                <p class="tech-list">
+                                    <span class="tech">Flask</span> 
+                                    <span class="tech">MySQL</span> 
+                                    <span class="tech">REST APIs</span> 
+                                    <span class="tech">PayStack</span>
+                                    <span class="tech">JWT</span> 
+                                </p>
+                                <p><button class="cv mt-3">Live Demo</button></p>
+                            </div>
+                            <div class="col-md-6"><img src="{{ url_for('static', filename='images/citywild_app.png')}}" alt="Event Tracker Image" class="proj-img"></div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
         </div>
+
+    </section>
+
+    <section id="contact-me">
+        <div class="container">
+            <h1 class="contact-heading">
+                <hr class="inline-hr"> Contact Me <hr class="inline-hr">
+            </h1>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="skill-card p-3 shadow-sm text-center rounded">
-          <i class="fab fa-html5 fa-3x mb-2 text-danger"></i>
-          <h5>HTML & CSS</h5>
-          <div class="progress mt-2">
-            <div class="progress-bar bg-danger" style="width: 80%;">80%</div>
-          </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+            <div class="card shadow-sm border-0">
+        <div class="card-body p-4 p-md-5 bg-white rounded-5">
+
+           <form method="POST" action="{{ url_for('contact') }}" novalidate id="contact">
+
+    {{ contact.csrf_token }}
+
+    <div class="row g-3 mb-3">
+
+        <!-- ✅ Name -->
+        <div class="col-md-6">
+            <label class="form-label fw-semibold">
+                {{ contact.name.label }}
+            </label>
+
+            {{ contact.name(
+                class="form-control " + ("is-invalid" if contact.name.errors else ""),
+                placeholder="Full Name"
+            ) }}
+
+            {% for error in contact.name.errors %}
+                <div class="invalid-feedback">
+                    {{ error }}
+                </div>
+            {% endfor %}
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="skill-card p-3 shadow-sm text-center rounded">
-          <i class="fas fa-database fa-3x mb-2 text-warning"></i>
-          <h5>SQLAlchemy</h5>
-          <div class="progress mt-2">
-            <div class="progress-bar bg-warning" style="width: 75%;">75%</div>
-          </div>
+
+        <!-- ✅ Email -->
+        <div class="col-md-6">
+            <label class="form-label fw-semibold">
+                {{ contact.email.label }}
+            </label>
+
+            {{ contact.email(
+                class="form-control " + ("is-invalid" if contact.email.errors else ""),
+                placeholder="Email Address",
+                type="email"
+            ) }}
+
+            {% for error in contact.email.errors %}
+                <div class="invalid-feedback">
+                    {{ error }}
+                </div>
+            {% endfor %}
         </div>
-      </div>
+
     </div>
-  </div>
-</section>
 
-<!-- Projects Section -->
-<section id="projects" class="container py-5">
-  <h2 class="text-center fw-bold mb-5">Projects</h2>
-  <div class="row g-4">
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow-sm h-100 project-card">
-        <img src="{{ url_for('static', filename='images/project1.png') }}" class="card-img-top" alt="Project Image">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Event Tracker System</h5>
-          <p class="card-text">Flask web app to manage events and registrations.</p>
-          <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
-        </div>
-      </div>
+    <!-- ✅ Phone -->
+    <div class="mb-3">
+        <label class="form-label fw-semibold">
+            {{ contact.phone.label }}
+        </label>
+
+        {{ contact.phone(
+            class="form-control " + ("is-invalid" if contact.phone.errors else ""),
+            placeholder="Phone Number"
+        ) }}
+
+        {% for error in contact.phone.errors %}
+            <div class="invalid-feedback">
+                {{ error }}
+            </div>
+        {% endfor %}
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow-sm h-100 project-card">
-        <img src="{{ url_for('static', filename='images/project2.png') }}" class="card-img-top" alt="Project Image">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Portfolio Website</h5>
-          <p class="card-text">My own personal portfolio built with Flask & Bootstrap.</p>
-          <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
-        </div>
-      </div>
+
+    <!-- ✅ Message -->
+    <div class="mb-3">
+        <label class="form-label fw-semibold">
+            {{ contact.message.label }}
+        </label>
+
+        {{ contact.message(
+            class="form-control " + ("is-invalid" if contact.message.errors else ""),
+            rows="4",
+            placeholder="Your Message..."
+        ) }}
+
+        {% for error in contact.message.errors %}
+            <div class="invalid-feedback">
+                {{ error }}
+            </div>
+        {% endfor %}
     </div>
-  </div>
-</section>
 
-<!-- Contact Section -->
-<section id="contact" class="bg-dark text-light py-5">
-  <div class="container">
-    <h2 class="text-center fw-bold mb-5">Contact Me</h2>
-    <form method="POST" action="/contact" class="mx-auto" style="max-width:600px;">
-      <div class="mb-3 input-group">
-        <span class="input-group-text"><i class="fas fa-user"></i></span>
-        <input type="text" class="form-control" placeholder="Your Name" name="name" required>
-      </div>
-      <div class="mb-3 input-group">
-        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-        <input type="email" class="form-control" placeholder="Your Email" name="email" required>
-      </div>
-      <div class="mb-3">
-        <textarea class="form-control" rows="5" placeholder="Your Message" name="message" required></textarea>
-      </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-gradient btn-lg">Send Message</button>
-      </div>
-    </form>
-    <p class="text-center mt-3 text-muted">Or email me directly: <a href="mailto:yourname@email.com" class="text-light">yourname@email.com</a></p>
-  </div>
-</section>
+    <!-- ✅ Contact Method -->
+    <div class="mb-4 p-3 border rounded bg-light">
+        <label class="form-label fw-semibold">
+            {{ contact.contact_method.label }}
+        </label>
 
-<!-- Footer -->
-<footer class="bg-dark text-light py-3 text-center">
-  &copy; 2026 Michael Isaac | Python Developer
-</footer>
+        <div class="d-flex gap-4 flex-wrap">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            {% for subfield in contact.contact_method %}
+                <div class="form-check">
+
+                    {{ subfield(
+                        class="form-check-input " + ("is-invalid" if contact.contact_method.errors else "")
+                    ) }}
+
+                    <label class="form-check-label">
+                        {{ subfield.label.text }}
+                    </label>
+
+                </div>
+            {% endfor %}
+
+            {% for error in contact.contact_method.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <!-- ✅ Submit -->
+    <div class="text-center">
+        {{ contact.submit(class="cv w-100") }}
+    </div>
+
+</form>
+
+
+        </div>
+    </div>
+
+        </div>
+    </section>
+
+
+    <section id="skills">
+        <div class="container">
+            <h1 class="skills-heading">
+                <hr class="inline-hr"> My Skills <hr class="inline-hr">
+            </h1>
+
+            <div class="row">
+                <div class="col-md-4 skill-item shadow-sm p-3 mb-5 rounded">
+                    <i class="fab fa-python icon"></i>
+                    <h4>Python & Flask</h4>
+                    <p>Building secure, scalable web applications with Python and Flask.</p>
+                </div>
+                <div class="col-md-4 skill-item shadow-sm p-3 mb-5 rounded">
+                    <i class="fab fa-react icon"></i>
+                    <h4>React.js</h4>
+                    <p>Creating responsive, interactive user interfaces with React.js.</p>
+                </div>
+                <div class="col-md-4 skill-item shadow-sm p-3 mb-5 rounded">
+                    <i class="fab fa-wordpress icon"></i>
+                    <h4>WordPress</h4>
+                    <p>Building and customizing websites using WordPress.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 skill-item shadow-sm p-3 mb-5 rounded">
+                    <i class="fas fa-database icon"></i>
+                    <h4>Databases</h4>
+                    <p>Designing and managing databases with MySQL Workbench & HeidiSQL.</p>
+                </div>
+                <div class="col-md-4 skill-item shadow-sm p-3 mb-5 rounded">
+                    <i class="fab fa-github icon"></i>
+                    <h4>Git/GitHub</h4>
+                    <p>Version control and collaboration using Git and GitHub.</p>
+                </div>
+                <div class="col-md-4 skill-item shadow-sm p-3 mb-5 rounded">
+                    <i class="fab fa-bootstrap icon"></i>
+                    <h4>Bootstrap</h4>
+                    <p>Building responsive, mobile-first websites with Bootstrap.</p>
+                </div>
+                <!-- Add more skills as needed -->
+            </div>
+
+        </div>
+    </section>
+
+    
+     <!-- # footer 
+        ================================================== -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+        
+                <div class="col-md-5">                    
+                    <h3 class="text-pretitle">About Micheal</h3>
+                    <p>
+                        I am a Software Developer dedicated to building scalable web applications and solving complex problems with clean, efficient code. 
+                        With a focus on Python and modern web technologies, <br>I help turn ideas into functional digital reality.
+                    </p>               
+                </div>                
+        
+                <div class="col-md-3 my-4">
+                    <h3 class="text-pretitle">Navigation</h3>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#top" class="nav-link mb-1 py-0 text-underline">Back to Top</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link mb-1 py-0 text-underline">About Me</a></li>
+                        <li class="nav-item"><a href="#projects" class="nav-link mb-1 py-0 text-underline">Projects</a></li>
+                        <li class="nav-item"><a href="#contact-me" class="nav-link mb-1 py-0 text-underline">Contact me</a></li>
+                    </ul>
+                </div>
+        
+                <div class="col-md-4">
+                    <h3 class="text-pretitle">Get In Touch</h3>
+                    <p>
+                        Looking for a developer to help with your next project? Let's discuss how I can add value.
+                    </p>
+                    <a href="https://mail.google.com/mail/?view=cm&to=isaacmicheal603@gmail.com" class="mb-0 cv nav-link text-center">Send an Email</a>
+                </div>
+        
+            </div>             
+            
+            <div class="row my-6 d-flex align-items-center">
+                <div class="col-md-6 navbar-nav">
+                    <ul class="d-flex nav-item ps-2">
+                        <li class="nav-link">
+                            <a href="#0" class="nav-link">
+                                <i class="fab fa-facebook "></i>
+                                <span class="me-2">Facebook</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#0" class="nav-link">
+                                <i class="fab fa-twitter"></i>
+                                <span class="me-2">Twitter</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#0" class="nav-link">
+                                <i class="fab fa-instagram"></i>
+                                <span class="me-2">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+
+                            <a class="nav-link" href="https://www.linkedin.com/in/micheal-erinola-5118883a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                                <span class="me-2">LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul> <!-- end s-footer__social -->
+                </div>
+                <div class="col-md-4">
+                    <p class="">
+                        <span>© 2026 Isaac Micheal</span> 
+                        <span>Built with Python & Passion</span>
+                    </p>
+                </div>
+        
+
+                <div class="col-md-2 text-end mb-4">
+                    <div>
+                        <a href="#top" class="arrow-up smoothscroll" title="Back to Top">
+                            <i class="fas fa-arrow-up"></i>
+                        </a>
+                    </div>
+
+                </div> 
+            </div>
+            </div>
+            
+        </footer>
+         <!-- end s-footer -->
+
+
+
+         <div id="contactModal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+
+            <div style="background: white; width: 100%; max-width: 900px; border-radius: 20px; overflow: hidden; display: flex; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: auto;" class="modal-box">
+
+                <button onclick="toggleModal()" style="position: absolute; right: 15px; top: 10px; background: none; border: none; font-size: 30px; cursor: pointer; color: #333; z-index: 10;">&times;</button>
+
+                <!-- Sidebar -->
+                <div style="background: #001427; color: white; padding: 4rem; width: 35%; display: flex; flex-direction: column; justify-content: center;" class="modal-sidebar">
+                    <h3 style="margin-bottom: 2rem; font-size: 2.4rem;">Let's Connect</h3>
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <!-- Social Links -->
+                        <a href="https://github.com/Tomideerinola" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.6rem; transition: opacity 0.3s;">
+                            <span style="background: #24292e; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                                <i class="fa-brands fa-github"></i>
+                            </span>
+                            <span>GitHub <small style="opacity: 0.5; font-size: 1rem; display: block;">Code & Repos</small></span>
+                        </a>
+                        <a href="https://x.com/Tomide1604" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.2rem; transition: opacity 0.3s;">
+                            <span style="background: #000000; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; border: 1px solid #333;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M12.685 5.872 15.466 2.69h-2.38L10.51 5.37 8.357 2.69H2.1l2.912 4.144-2.912 3.32h2.38l2.36-2.69 2.298 2.69h6.257L12.684 5.872ZM10.22 8.761l-.396-.563-3.614-5.143h1.83l2.843 4.047.396.564 3.791 5.399h-1.83l-3.05-4.346Z"/>
+                                </svg>
+                            </span>
+                            <span>Twitter / X <small style="opacity: 0.5; font-size: 1rem; display: block;">Latest Updates</small></span>
+                        </a>
+                        <a href="https://facebook.com/yourusername" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.6rem; transition: opacity 0.3s;">
+                            <span style="background: #1877F2; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span>
+                            <span>Facebook <small style="opacity: 0.5; font-size: 1rem; display: block;">Direct Contact</small></span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/micheal-erinola-5118883a7" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.2rem; transition: opacity 0.3s; margin-bottom: 2rem;">
+                            <span style="background: #0077B5; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill:white;">
+                                    <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.035c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711z"></path>
+                                </svg> 
+                            </span>
+                            <span>LinkedIn <small style="opacity: 0.5; font-size: 1rem; display: block;">Professional Network</small></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div style="padding: 4rem; width: 65%; background: white;" class="modal-form-side">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div style="background: #e6fffa; color: #234e52; padding: 1.5rem; border-radius: 8px; border: 1px solid #b2f5ea; margin-bottom: 2rem; font-size: 1.4rem;">
+                              {{ message }}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+
+                    <h4 style="margin-bottom: 2rem; font-size: 1.5rem; color: #000;">Send a Message</h4>
+
+                    <form method="POST" action="{{ url_for('contact') }}" novalidate>
+                        {{ contact.csrf_token }}
+                        
+                        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="form-field">
+                                <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.name.label }}</label>
+                                {{ contact.name(class="sty-contact", placeholder="Your Name") }}
+                            </div>
+                            <div class="form-field">
+                                <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.email.label }}</label>
+                                {{ contact.email(class="sty-contact", placeholder="Email Address") }}
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.phone.label }}</label>
+                            {{ contact.phone(class="sty-contact", placeholder="Phone Number") }}
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.message.label }}</label>
+                            {{ contact.message(class="sty-contact", placeholder="How can I help you?") }}
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; display: block; margin-bottom: 1rem;">{{ contact.contact_method.label }}</label>
+                            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                                {% for subfield in contact.contact_method %}
+                                    <label style="display: inline-flex; align-items:  center; color:#000; font-size: 1.3rem; cursor: pointer; margin: 0; font-weight: 400;">
+                                        {{ subfield(style="margin-right: 8px; width: 16px; height: 16px; flex-shrink: 0;") }}
+                                        {{ subfield.label.text }}
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        {{ contact.submit(class="cv") }}
+                    </form>
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+  
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
+    <script src="{{ url_for('static', filename='index.js')}}"></script>
 </body>
 </html>
