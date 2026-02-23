@@ -1,8 +1,5 @@
 class GeneralConfig:
-    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevelopmentConfig(GeneralConfig):
-    SQLALCHEMY_DATABASE_URI="mysql+mysqlconnector://root@localhost/myportfolio_db"
-
-class TestConfig(GeneralConfig):
-    SQLALCHEMY_DATABASE_URI="mysql+mysqlconnector://root@localhost/myportfolio_db"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///app.db"

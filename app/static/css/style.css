@@ -319,3 +319,94 @@ p .tech {
     transform: translateY(-2px);
     outline: none;
 } 
+
+
+
+.dashboard-header {
+    background: #001427;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 25px;
+}
+
+.dashboard-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.top-actions a {
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.home-btn {
+    background: #6E6E6E;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.logout-btn {
+    background: #BF0603;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.logout-btn:hover {
+    background: #9e0402;
+}
+
+.card-custom {
+    background: #ffffff;
+    color: #000;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+table {
+    font-size: 14px;
+}
+
+th {
+    white-space: nowrap;
+}
+
+.status-btn {
+    background: #BF0603;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.status-btn.attended {
+    background: #198754;
+}
+
+.status-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+td {
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+
+    .top-actions {
+        width: 100%;
+    }
+
+    .top-actions a {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}

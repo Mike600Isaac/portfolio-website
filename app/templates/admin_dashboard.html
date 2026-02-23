@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micheal</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- google font -->
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+     <!-- Fontawsome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+      <!-- favicon -->
+       <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='favicon_io/apple-touch-icon.png')}}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='favicon_io/favicon-32x32.png') }}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',filename='favicon_io/favicon-16x16.png') }}">
+      <link rel="manifest" href="{{ url_for('static',filename='favicon_io/site.webmanifest') }}">
+      
+
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+
+    <!-- HEADER -->
+    <div class="dashboard-header d-flex justify-content-between align-items-center">
+        <div class="dashboard-title">
+            Admin Dashboard
+        </div>
+
+        <div class="top-actions">
+            <a href="/" class="home-btn">
+                <i class="fa fa-home me-1"></i> Home
+            </a>
+
+            <a href="{{ url_for('admin_logout') }}" class="logout-btn">
+                <i class="fa fa-sign-out-alt me-1"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container py-4">
+
+        <div class="card-custom">
+
+            <h5 class="mb-3">Contact Messages</h5>
+
+            <div class="table-responsive">
+
+                <table class="table table-striped table-bordered align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Message</th>
+                            <th>Method</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for contact in contacts %}
+                        <tr>
+                            <td>{{ contact.name }}</td>
+                            <td>{{ contact.email }}</td>
+                            <td>{{ contact.phone }}</td>
+                            <td style="min-width: 250px;">{{ contact.message }}</td>
+                            <td>{{ contact.contact_method }}</td>
+                            <td>{{ contact.date_sent.strftime('%d %b %Y') }}</td>
+                            <td>
+
+                                <button 
+                                    class="status-btn {% if contact.contact_status == 'attended' %}attended{% endif %}"
+                                    onclick="markAttended({{ contact.id }}, this)"
+                                    {% if contact.contact_status == 'attended' %}disabled{% endif %}
+                                >
+                                    {% if contact.contact_status == "attended" %}
+                                        Attended
+                                    {% else %}
+                                        Mark Attended
+                                    {% endif %}
+                                </button>
+
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='index.js')}}"></script>
+</body>
+</html>

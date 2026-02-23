@@ -37,6 +37,5 @@ def create_app():
 app = create_app()
 
 
-from app import user_route
-# Import models and forms
+from app import user
 from app import models, form

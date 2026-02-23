@@ -47,3 +47,24 @@ function toggleModal() {
             const modal = document.getElementById('contactModal');
             if (event.target == modal) { toggleModal(); }
         }
+
+
+function markAttended(id, btn) {
+
+    fetch(`/admin/contact/${id}/attend`, {
+        method: "POST"
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.success) {
+            btn.innerText = "Attended";
+            btn.classList.add("attended");
+            btn.disabled = true;
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Something went wrong");
+    });
+}
